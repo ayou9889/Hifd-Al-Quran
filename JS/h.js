@@ -47,7 +47,6 @@ style.innerHTML=`
         font-size:1.3em;
         padding:15px;
         overflow: auto;
-        display: flex;
     }
     .h span{
         border-radius:50%;
@@ -248,4 +247,5 @@ container.insertAdjacentHTML("afterend",`
                     <footer>This website is made with &#x1f499; by&nbsp;<a href="https://oufaddoul.com">Ayoub Oufaddoul</a></footer>
 
                 `);
+
 
