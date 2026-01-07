@@ -192,11 +192,11 @@ toaya.addEventListener("change",()=>{
     });
 });
 let cp=0,canDel=true;
-h.addEventListener("keydown",(e)=>{
-    if(e.key === "Backspace" && !canDel)
+h.addEventListener("input",(e)=>{
+    if(e.data === null && !canDel)
         e.preventDefault();
-   alert(`key ${e.key}`);
-    if(/\s/.test(e.key) || e.key === " "){
+   alert(`key ${e.data}`);
+    if(/\s/.test(e.data) || e.data === " "){
        alert("space");
        alert(`${h.textContent.split(" ").slice(-1)[0].replace(/\d{1,3}/,"").trim()}|aa[cp].split(' ')[0]`);
         if((new RegExp(`^${h.textContent.split(" ").slice(-1)[0].replace(/\d{1,3}/,"").trim()}$`)).test(aa[cp].split(' ')[0])){
@@ -230,7 +230,7 @@ h.addEventListener("keydown",(e)=>{
             selection.addRange(range);
         }
     }
-    else if(e.key !== "Backspace")
+    else if(e.data !== null)
         canDel=true;
 });
 c0.appendChild(label0);
@@ -247,6 +247,7 @@ container.insertAdjacentHTML("afterend",`
                     <footer>This website is made with &#x1f499; by&nbsp;<a href="https://oufaddoul.com">Ayoub Oufaddoul</a></footer>
 
                 `);
+
 
 
 
