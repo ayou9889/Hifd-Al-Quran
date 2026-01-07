@@ -51,7 +51,7 @@ style.innerHTML=`
     .h span{
         border-radius:50%;
         background-color:#2f3957;
-        display: flex;
+        display: inline-flex;
         width:25px;
         height:25px;
         justify-content:center;
@@ -247,5 +247,6 @@ container.insertAdjacentHTML("afterend",`
                     <footer>This website is made with &#x1f499; by&nbsp;<a href="https://oufaddoul.com">Ayoub Oufaddoul</a></footer>
 
                 `);
+
 
 
