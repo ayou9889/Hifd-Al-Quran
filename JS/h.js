@@ -207,7 +207,7 @@ h.addEventListener("keydown",(e)=>{
             aa[cp]=aa[cp].trim().split(" ").slice(1).join(" ");
             if(aa[cp] === ""){
                 cp++;
-                h.innerHTML+=` <span>${cm++}</span>`;
+                h.innerHTML+=`&nbsp;<span>${cm++}</span>&nbsp;`;
                 if(cm > Number(toaya.value))
                 {
                     h.removeAttribute("contenteditable");
@@ -247,6 +247,7 @@ container.insertAdjacentHTML("afterend",`
                     <footer>This website is made with &#x1f499; by&nbsp;<a href="https://oufaddoul.com">Ayoub Oufaddoul</a></footer>
 
                 `);
+
 
 
 
