@@ -193,7 +193,7 @@ toaya.addEventListener("change",()=>{
 });
 let cp=0,canDel=true;
 h.addEventListener("input",(e)=>{
-    if(e.data === "null" && !canDel)
+    if(e.data === null && !canDel)
         e.preventDefault();
    console.log("e.data",e.data);
     if(/\s/.test(e.data)){
@@ -229,7 +229,7 @@ h.addEventListener("input",(e)=>{
             selection.addRange(range);
         }
     }
-    else if(e.data !== "null")
+    else if(e.data !== null)
         canDel=true;
 });
 c0.appendChild(label0);
@@ -246,6 +246,7 @@ container.insertAdjacentHTML("afterend",`
                     <footer>This website is made with &#x1f499; by&nbsp;<a href="https://oufaddoul.com">Ayoub Oufaddoul</a></footer>
 
                 `);
+
 
 
 
