@@ -202,7 +202,7 @@ h.addEventListener("input",(e)=>{
         if((new RegExp(`^${h.textContent.split(" ").slice(-1)[0].replace(/\d{1,3}/,"").trim()}$`)).test(aa[cp].split(' ')[0].trim())){
             canDel=false;
             aa[cp]=aa[cp].trim().split(" ").slice(1).join(" ");
-            h.innerHTML+=aa[cp].split(" ")[0].trim()+" ";
+            h.innerHTML+=aa[cp].split(" ")[0].trim()+"&nbsp;";
             aa[cp]=aa[cp].trim().split(" ").slice(1).join(" ");
             if(aa[cp] === ""){
                 cp++;
@@ -246,6 +246,7 @@ container.insertAdjacentHTML("afterend",`
                     <footer>This website is made with &#x1f499; by&nbsp;<a href="https://oufaddoul.com">Ayoub Oufaddoul</a></footer>
 
                 `);
+
 
 
 
