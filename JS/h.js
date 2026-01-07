@@ -177,17 +177,13 @@ fromaya.addEventListener("change",(e)=>{
     }
     toaya.value="1000";
 });
-let str="",aa=[],cm=0;
+let aa=[],cm=0;
 toaya.addEventListener("change",()=>{
     fetch(`https://oufaddoul.com/Hifd-Al-Quran/get/q/${((Number(t) > 100)?"c":(Number(t)>50)?"b":"a")}/65${t}89.json`).then((d)=>d.json()).then((data)=>{
         st=data[0].s;
         cp=0;
         aa=st.replaceAll(/\(\d{1,3}\)/g,"()").split("()");
         aa=aa.splice((Number(fromaya.value)-1),(Number(toaya.value)));
-        let ind=Number(fromaya.value);
-        str="";
-        for(let i=0;i<aa.length;i++)
-            str+=`${aa[i].trim()}(${ind++})`;
         aa=aa.map((v)=>v.trim());
         cm=Number(fromaya.value);
         h.innerHTML="";
@@ -247,6 +243,7 @@ container.insertAdjacentHTML("afterend",`
                     <footer>This website is made with &#x1f499; by&nbsp;<a href="https://oufaddoul.com">Ayoub Oufaddoul</a></footer>
 
                 `);
+
 
 
 
