@@ -204,7 +204,7 @@ h.addEventListener("input",(e)=>{
        console.log("aa",aa[cp].split(' ')[0]);
        // .match(/\s[^\s]+$/)[0]
        // h.textContent.trim().replace(/\s\d{1,3}\s/,"").split(" ").slice(-1)[0].trim()
-        if((new RegExp(`^${` ${h.textContent} `.match(/\s[^\s]+$/)[0].trim()}$`)).test(aa[cp].split(' ')[0].trim())){
+        if((new RegExp(`^${h.textContent.trim().replace(/\s\d{1,3}\s/,"").split(" ").slice(-1)[0].trim()}$`)).test(aa[cp].split(' ')[0].trim())){
             canDel=false;
             aa[cp]=aa[cp].trim().split(" ").slice(1).join(" ");
             h.innerHTML+=aa[cp].split(" ")[0].trim()+"&nbsp;";
@@ -251,6 +251,7 @@ container.insertAdjacentHTML("afterend",`
                     <footer>This website is made with &#x1f499; by&nbsp;<a href="https://oufaddoul.com">Ayoub Oufaddoul</a></footer>
 
                 `);
+
 
 
 
