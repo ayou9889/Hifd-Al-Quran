@@ -139,7 +139,7 @@ const h=document.createElement("div");
 h.classList.add("h");
 h.innerHTML=`أولا يجب اختيار السورة و الآيات التي تريد حفضها`;
 let all=[];
-fetch("/get/q.json").then((d)=>d.json()).then((data)=>{
+fetch("https://oufaddoul.com/Hifd-Al-Quran/get/q.json").then((d)=>d.json()).then((data)=>{
     all=data;
     surat.innerHTML+=`<option value='1000'>السور</option>`;
     data.forEach((v)=>{
@@ -179,7 +179,7 @@ fromaya.addEventListener("change",(e)=>{
 });
 let str="",aa=[],cm=0;
 toaya.addEventListener("change",()=>{
-    fetch(`/get/q/${((Number(t) > 100)?"c":(Number(t)>50)?"b":"a")}/65${t}89.json`).then((d)=>d.json()).then((data)=>{
+    fetch(`https://oufaddoul.com/Hifd-Al-Quran/get/q/${((Number(t) > 100)?"c":(Number(t)>50)?"b":"a")}/65${t}89.json`).then((d)=>d.json()).then((data)=>{
         st=data[0].s;
         cp=0;
         aa=st.replaceAll(/\(\d{1,3}\)/g,"()").split("()");
@@ -245,4 +245,5 @@ document.body.appendChild(container);
 document.body.appendChild(cong);
 container.insertAdjacentHTML("afterend",`
                     <footer>This website is made with &#x1f499; by&nbsp;<a href="https://oufaddoul.com">Ayoub Oufaddoul</a></footer>
+
                 `);
