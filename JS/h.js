@@ -195,8 +195,7 @@ let cp=0,canDel=true;
 h.addEventListener("keydown",(e)=>{
     if(e.key === "Backspace" && !canDel)
         e.preventDefault();
-   alert("keydown");
-    if(/\s/.test(e.key)){
+    if(/\s/.test(e.key) || e.key === " "){
        alert("space");
        alert(`${h.textContent.split(" ").slice(-1)[0].replace(/\d{1,3}/,"").trim()}|aa[cp].split(' ')[0]`);
         if((new RegExp(`^${h.textContent.split(" ").slice(-1)[0].replace(/\d{1,3}/,"").trim()}$`)).test(aa[cp].split(' ')[0])){
@@ -247,6 +246,7 @@ container.insertAdjacentHTML("afterend",`
                     <footer>This website is made with &#x1f499; by&nbsp;<a href="https://oufaddoul.com">Ayoub Oufaddoul</a></footer>
 
                 `);
+
 
 
 
