@@ -193,14 +193,10 @@ toaya.addEventListener("change",()=>{
 });
 let cp=0,canDel=true;
 h.addEventListener("input",(e)=>{
-    if(e.data === null && !canDel)
+    if(e.data === "null" && !canDel)
         e.preventDefault();
-   alert(`key ${e.data}`);
-    if(/\s/.test(e.data) || e.data === " "){
-       alert("space");
-       alert(`${h.textContent.split(" ").slice(-1)[0].replace(/\d{1,3}/,"").trim()}|aa[cp].split(' ')[0]`);
+    if(/\s/.test(e.data)){
         if((new RegExp(`^${h.textContent.split(" ").slice(-1)[0].replace(/\d{1,3}/,"").trim()}$`)).test(aa[cp].split(' ')[0])){
-           alert("inside if");
             canDel=false;
             aa[cp]=aa[cp].trim().split(" ").slice(1).join(" ");
             h.innerHTML+=" "+aa[cp].split(" ")[0];
@@ -230,7 +226,7 @@ h.addEventListener("input",(e)=>{
             selection.addRange(range);
         }
     }
-    else if(e.data !== null)
+    else if(e.data !== "null")
         canDel=true;
 });
 c0.appendChild(label0);
@@ -247,6 +243,7 @@ container.insertAdjacentHTML("afterend",`
                     <footer>This website is made with &#x1f499; by&nbsp;<a href="https://oufaddoul.com">Ayoub Oufaddoul</a></footer>
 
                 `);
+
 
 
 
